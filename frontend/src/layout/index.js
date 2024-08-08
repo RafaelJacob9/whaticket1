@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: "100vh",
+    background: "#DCDCDC",
     [theme.breakpoints.down("sm")]: {
       height: "calc(100vh - 56px)",
     },

@@ -47,17 +47,35 @@ const Copyright = () => {
  };
 
 const useStyles = makeStyles(theme => ({
+	root: {
+		width: "100vw",
+		height: "100vh",
+		background: "#C0C0C0",
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "100% 100%",
+		backgroundPosition: "center",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+		textAlign: "center",
+	},
 	paper: {
+		backgroundColor: theme.palette.login,
 		marginTop: theme.spacing(8),
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
+		padding: "55px 30px",
+		borderRadius: "12.5px",
 	},
 	avatar: {
+		
 		margin: theme.spacing(1),
 		backgroundColor: theme.palette.secondary.main,
 	},
 	form: {
+		
 		width: "100%",
 		marginTop: theme.spacing(3),
 	},
@@ -67,6 +85,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const UserSchema = Yup.object().shape({
+	
 	name: Yup.string()
 		.min(2, "Too Short!")
 		.max(50, "Too Long!")
@@ -117,6 +136,7 @@ const SignUp = () => {
 
 
 	return (
+		<div className={classes.root}>
 		<Container component="main" maxWidth="xs">
 			<CssBaseline />
 			<div className={classes.paper}>
@@ -188,8 +208,8 @@ const SignUp = () => {
 											{...field}
 											variant="outlined"
 											fullWidth
-											label="DDD988888888"
-											inputProps={{ maxLength: 11 }} // Definindo o limite de caracteres
+											label="DDD999999999"
+											inputProps={{ maxLength: 12 }} // Definindo o limite de caracteres
 										/>
 									)}
 								</Field>
@@ -222,7 +242,7 @@ const SignUp = () => {
 									>
 										{plans.map((plan, key) => (
 											<MenuItem key={key} value={plan.id}>
-												{plan.name} - Atendentes: {plan.users} - WhatsApp: {plan.connections} - Filas: {plan.queues} - R$ {plan.value}
+												R$ {99.99}
 											</MenuItem>
 										))}
 									</Field>
@@ -255,6 +275,7 @@ const SignUp = () => {
 			</div>
 			<Box mt={5}><Copyright /></Box>
 		</Container>
+		</div>
 	);
 };
 
